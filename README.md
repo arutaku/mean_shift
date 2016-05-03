@@ -1,8 +1,8 @@
 # mean_shift
 
-Mean Shift parallel implementation allowing different kernels (even custom ones) under GPLv3.
+Mean Shift [1] parallel implementation allowing different kernels (even custom ones) under GPLv3.
 
-The main motivation of this implementation is the need to use a gaussian kernel while using the scikit-learn implementation of Mean Shift (only flat kernel is available). There are some implementations of Mean Shift gaussian kernels, but I have experimented some performance issues while using them.
+The main motivation of this implementation is the need to use a gaussian kernel while using the scikit-learn implementation of Mean Shift (only flat kernel was available) and take advantage of the multiple cores of my computer allowing parallel execution when dealing with big datasets like [2], while reproducing the experiment described in [3].
 
 ## Features
 
@@ -11,8 +11,20 @@ The main motivation of this implementation is the need to use a gaussian kernel 
    - Predefined flat and gaussian kernels
    - Custom kernels are also allowed
  - Parallel execution using JobLib
+ 
+## Examples
 
-## Installation
+The following images show the output produced by the below example:
+
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_1.png">
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_2.png">
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_3.png">
+
+Sometimes it cannot find the a priori number of clusters. But in this case, even I would also have failed miserably!
+
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_4.png">
+
+## [TODO] Installation
 
 Make sure you have numpy, scikit-learn and joblib installed. Then do the following:
 
@@ -22,7 +34,7 @@ Make sure you have numpy, scikit-learn and joblib installed. Then do the followi
  sudo python setup.py install
 ```
 
-## Usage
+## Usage
 
 Matplotlib is also needed to run the example in order to show the results.
 
@@ -57,21 +69,11 @@ plt.axis('equal')
 plt.show()
 ```
 
-## Examples
-
-The following images show the output produced by the above example:
-
-<img src="https://">
-<img src="https://">
-<img src="https://">
-
-Sometimes is not successful. But in this case, even I would have failed miserably!
-
-<img src="https://">
-
 ## References
 
 1. Fukunaga, Keinosuke; Larry D. Hostetler (January 1975). "The Estimation of the Gradient of a Density Function, with Applications in Pattern Recognition". IEEE Transactions on Information Theory (IEEE) 21 (1): 32–40.
-2. Cheng, Yizong (August 1995). "Mean Shift, Mode Seeking, and Clustering". IEEE Transactions on Pattern Analysis and Machine Intelligence (IEEE) 17 (8): 790–799.
-3. Comaniciu, Dorin; Peter Meer (May 2002). "Mean Shift: A Robust Approach Toward Feature Space Analysis". IEEE Transactions on Pattern Analysis and Machine Intelligence (IEEE) 24 (5): 603–619.
-4. Aliyari Ghassabeh, Youness (2015-03-01). "A sufficient condition for the convergence of the mean shift algorithm with Gaussian kernel". Journal of Multivariate Analysis 135: 1–10.
+2. Hatem Mousselly-Sergieh, Daniel Watzinger, Bastian Huber, Mario Döller, Elöd Egyed-Zsigmond, and Harald Kosch. 2014. World-wide scale geotagged image dataset for automatic image annotation and reverse geotagging. In Proceedings of the 5th ACM Multimedia Systems Conference (MMSys '14). ACM, New York, NY, USA, 47-52.
+3. David J. Crandall, Lars Backstrom, Daniel Huttenlocher, and Jon Kleinberg. 2009. Mapping the world's photos. In Proceedings of the 18th international conference on World wide web (WWW '09). ACM, New York, NY, USA, 761-770.
+4. Cheng, Yizong (August 1995). "Mean Shift, Mode Seeking, and Clustering". IEEE Transactions on Pattern Analysis and Machine Intelligence (IEEE) 17 (8): 790–799.
+5. Comaniciu, Dorin; Peter Meer (May 2002). "Mean Shift: A Robust Approach Toward Feature Space Analysis". IEEE Transactions on Pattern Analysis and Machine Intelligence (IEEE) 24 (5): 603–619.
+6. Aliyari Ghassabeh, Youness (2015-03-01). "A sufficient condition for the convergence of the mean shift algorithm with Gaussian kernel". Journal of Multivariate Analysis 135: 1–10.
