@@ -16,13 +16,13 @@ The main motivation of this implementation is the need to use a gaussian kernel 
 
 The following images show the output produced by the below example:
 
-<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_1.png">
-<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_2.png">
-<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_3.png">
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_1.png" style="max-width:90%;">
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_2.png" style="max-width:90%;">
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_3.png" style="max-width:90%;">
 
 Sometimes it cannot find the a priori number of clusters. But in this case, even I would also have failed miserably!
 
-<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_4.png">
+<img src="https://raw.githubusercontent.com/arutaku/mean_shift/master/images/figure_4.png" style="max-width:90%;">
 
 ## [TODO] Installation
 
